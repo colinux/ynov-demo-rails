@@ -4,6 +4,6 @@
   <section>
     <h2><%= restaurant.name %></h2>
     <p><%= restaurant.city.name %></p>
-    <%= image_tag("http://placehold.it/300x200") %>
+    <%= cl_image_tag(restaurant.photo, width: 300, height: 200, crop: :fill) %>
   </section>
 <% end %>
