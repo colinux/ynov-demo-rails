@@ -34,6 +34,7 @@ gem 'jquery-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'dotenv-rails'
+gem 'simple_form'
 
 gem 'cloudinary', '~> 1.8', '>= 1.8.3'
 gem 'carrierwave'
