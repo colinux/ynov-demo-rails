@@ -11,12 +11,33 @@
       <%= link_to("La Fourchette", root_path, class: "navbar-brand") %>
     </div>
 
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li><%= link_to("Nouveau resto", new_restaurant_path) %></li>
-        </ul>
-      </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+              aria-haspopup="true" aria-expanded="false">
+                Bienvenue, <%= current_user.email %>
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <%= link_to edit_user_registration_path do %>
+                  <i class="fa fa-user"></i> Modifier le profil
+                <% end %>
+              </li>
+              <li>
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="fa fa-sign-out"></i> Déconnexion
+                <% end %>
+              </li>
+            </ul>
+          </li>
+        <% else %>
+          <li><%= link_to("Connexion", new_user_session_path) %></li>
+          <li><%= link_to("Inscription", new_user_registration_path) %></li>
+        <% end %>
+      </ul>
     </div><!-- /.navbar-collapse -->
   </div>
 </nav>

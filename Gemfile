@@ -38,6 +38,8 @@ gem 'simple_form'
 
 gem 'cloudinary', '~> 1.8', '>= 1.8.3'
 gem 'carrierwave'
+gem 'devise', '~> 4.4'
+gem 'devise-i18n'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
