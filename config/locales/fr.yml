@@ -2,8 +2,8 @@ fr:
   restaurants:
     new:
       title: "Ajout d'un resto"
-    show:
-      comments_header:
+    comments_header:
+      title:
         zero: "Il n'y a aucun commentaire pour le restaurant %{name}"
         one: "Il y a un commentaire pour le restaurant %{name}"
         other: "Il y a %{count} commentaires pour le restaurant %{name}"

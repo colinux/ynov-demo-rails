@@ -13,7 +13,9 @@
       <p>Propriétaire: <%= @restaurant.user.username %></p>
 
       <div class="comments">
-        <h2><%= t('.comments_header', count: @restaurant.comments.count, name: @restaurant.name) %></h2>
+        <div id="comments_header">
+          <%= render "restaurants/comments_header", restaurant: @restaurant %>
+        </div>
 
         <% @restaurant.comments.each do |comment| %>
           <%= render "comments/show", comment: comment %>

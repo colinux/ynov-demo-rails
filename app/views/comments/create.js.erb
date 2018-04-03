@@ -1,0 +1,11 @@
+<% if @new_comment.errors.any? %>
+  $("#new_comment").html("<%= j render 'comments/form', restaurant: @new_comment.restaurant, comment: @new_comment %>");
+<% else %>
+  $("#comments_header").html(
+    "<%= j render 'restaurants/comments_header',
+                    restaurant: @new_comment.restaurant %>"
+    );
+  var comment = $("<%= j render 'comments/show', comment: @new_comment %>").hide();
+  $(".comments").append(comment);
+  comment.slideDown();
+<% end %>
