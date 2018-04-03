@@ -1,4 +1,6 @@
 class RestaurantsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+
   def index
     @restaurants = Restaurant.all
   end
@@ -15,6 +17,7 @@ class RestaurantsController < ApplicationController
     restaurant_params = params.require(:restaurant).permit(:name, :city_id, :photo)
 
     @restaurant = Restaurant.new(restaurant_params)
+    @restaurant.user = current_user
 
     if @restaurant.valid?
       @restaurant.save!
