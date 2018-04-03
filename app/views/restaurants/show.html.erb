@@ -11,6 +11,24 @@
     <div class="col-sm-8">
       <p>Ville: <%= @restaurant.city.name %></p>
       <p>Propriétaire: <%= @restaurant.user.username %></p>
+
+      <div class="comments">
+        <% if @restaurant.comments.any? %>
+          <h2>Commentaires:</h2>
+
+          <% @restaurant.comments.each do |comment| %>
+            <%= render "comments/show", comment: comment %>
+          <% end %>
+        <% end %>
+      </div>
+
+      <div class="comment-instruction">
+        <% if user_signed_in? %>
+          <%= render "comments/form", restaurant: @restaurant, comment: @new_comment %>
+        <% else %>
+          <p>Vous devez être connecté.e pour laisser un commentaire.</p>
+        <% end %>
+      </div>
     </div>
   </section>
 </div>
