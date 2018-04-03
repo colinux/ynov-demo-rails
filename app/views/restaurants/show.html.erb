@@ -13,12 +13,10 @@
       <p>Propriétaire: <%= @restaurant.user.username %></p>
 
       <div class="comments">
-        <% if @restaurant.comments.any? %>
-          <h2>Commentaires:</h2>
+        <h2><%= t('.comments_header', count: @restaurant.comments.count, name: @restaurant.name) %></h2>
 
-          <% @restaurant.comments.each do |comment| %>
-            <%= render "comments/show", comment: comment %>
-          <% end %>
+        <% @restaurant.comments.each do |comment| %>
+          <%= render "comments/show", comment: comment %>
         <% end %>
       </div>
 

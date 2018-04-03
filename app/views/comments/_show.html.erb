@@ -3,5 +3,5 @@
     <%= comment.text %>
   </blockquote>
   <p class="small text-right">Par <%= comment.user.username %>
-    le <%= l(comment.created_at.to_date, format: "%d/%m/%Y") %></p>
+    le <%= I18n.localize(comment.created_at.to_date, format: :long) %></p>
 </section>

@@ -16,5 +16,6 @@ module Lafourchette
     # -- all .rb files in that directory are automatically loaded.
     config.i18n.available_locales = [:fr, :en]
     config.i18n.default_locale = :fr
+    config.i18n.locale = :fr
   end
 end
